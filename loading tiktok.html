@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+  :root {
+      --pink: #fc3f9e;
+      --blue: #50e8f3;
+      --loading-size: 100px;
+  }
+  body {
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+  }
+  h1 {
+      color: white;
+      position: absolute;
+      top: 140px;
+  }
+  .loading-tiktok {
+      width: var(--loading-size);
+      height: var(--loading-size);
+      position: absolute;
+      left: calc(50% - 100px);
+      top: 40px;
+  }
+  .loading-tiktok::before,
+  .loading-tiktok::after {
+      content: '';
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      border-radius: 50%;
+      animation: move 1s infinite;
+  }
+
+  .loading-tiktok::after {
+      background-color: var(--blue);
+  }
+
+  .loading-tiktok::before {
+      background-color: var(--pink);
+      animation-delay: .5s;
+  }
+  @keyframes move {
+      
+    0%,
+    100% {
+        left: var(--loading-size);
+    }
+    25% {
+        transform: scale(.1);
+    }
+    50% {
+        left: 0;
+    }
+    75% {
+        transform: scale(1);
+    }
+  }
+  </style>
+  </head>
+<body>
+    <h1>steven</h1>
+    <span class="loading-tiktok"></span>
+</body>
+</html>
